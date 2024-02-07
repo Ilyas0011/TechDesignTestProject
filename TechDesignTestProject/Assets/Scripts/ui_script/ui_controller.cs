@@ -9,6 +9,7 @@ public class ui_controller : MonoBehaviour
     private bool isButtonAnimationPlayed = false; //Была ли уже проиграна анимация появления кнопки
     private string nextSecondLevelName = "second_scene"; // Название следующей сцены
     private string nextFirstLevelName = "first_scene";
+    [SerializeField] AudioSource buttonActivateAudio;
 
     void Start()
     {
@@ -19,9 +20,15 @@ public class ui_controller : MonoBehaviour
     {
         if (isButtonAnimationPlayed == false)
         {
+            buttonActivateAudio.Play();
             anim.Play("canvas_button_animation");
             isButtonAnimationPlayed = true;
         }
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit(); // Выход из приложения
     }
 
     // Функция, вызываемая при нажатии кнопки
@@ -38,6 +45,8 @@ public class ui_controller : MonoBehaviour
             Debug.LogError("Next level name is not specified!");
         }
     }
+
+    
 
     // Возвращаемся на первую сцену
     public void LoadPreviousLevel()

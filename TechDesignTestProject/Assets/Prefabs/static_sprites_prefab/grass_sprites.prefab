@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7790069493236966388}
   - component: {fileID: 7790069493236966389}
   m_Layer: 0
-  m_Name: grass2_sprites
+  m_Name: grass_sprites
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -6,7 +6,8 @@ public class wing_controller : MonoBehaviour
 {
     Animator anim;
     [SerializeField] ui_controller uiScript;
-    // Start is called before the first frame update
+    [SerializeField] AudioSource jumpAudio;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -17,6 +18,7 @@ public class wing_controller : MonoBehaviour
     {
         anim.Play("wing_flight_animation");
         uiScript.PlayButtonAnimation();
+        jumpAudio.Play();
 
     }
 }
